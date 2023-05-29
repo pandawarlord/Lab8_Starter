@@ -137,6 +137,7 @@ describe('Basic user flow for Website', () => {
     // is in the cart - do this by checking the text on the buttons so that they should say "Add to Cart".
     // Also check to make sure that #cart-count is still 0
     await page.reload();
+    let productItems = await page.$$('product-item');
     for(let i = 0; i < productItems.length; i++){
       let root = await productItems[i].getProperty('shadowRoot');
       let button = await root.$('button');
