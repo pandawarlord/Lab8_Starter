@@ -69,7 +69,6 @@ describe('Basic user flow for Website', () => {
     // get the shadowRoot and query select the button inside, and click on it.
     // Check to see if the innerText of #cart-count is 20
     let productItems = await page.$$('product-item');
-    console.log(productItems.length);
     for (let i = 1; i < productItems.length; i++) {
       let root = await productItems[i].getProperty('shadowRoot');
       let button = await root.$('button');
